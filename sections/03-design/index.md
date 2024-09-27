@@ -12,8 +12,6 @@ This chapter explains the strategies used to meet the requirements identified in
 
 At a high level, GraphProject consists of three fundamental components:
 
-At a high level, GraphProject consists of three fundamental components:
-
 -The backend, which provides a REST API using Node.js and Express for core functionalities like tutor recommendations and graph plotting.
 -The frontend web application, which interfaces with the backend through the REST API to allow users to input preferences for tutor recommendations and graph plotting.
 -The client-side in-memory data storage, which temporarily stores user preferences, tutor information, and graph data using JavaScript arrays.
