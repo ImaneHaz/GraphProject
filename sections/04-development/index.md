@@ -7,30 +7,34 @@ nav_order: 5
 # Development
 
 ## DVCS
-To track the development of our project, I used a Github repository and created a dedicated organization called `unibo-dtm-se-2324-graphproject Owner`. The main repository is `GraphProject`, which was divided into several branches: the `master` branch contains project releases. 
+To track the development of our project, I used a GitHub repository and created a dedicated organization called `unibo-dtm-se-2324-graphproject Owner`. The main repository, `GraphProject`, was divided into three main branches:
+- **master**: Contains the stable project releases.
+- **develop**: Used for active development and contains the latest features and updates.
+- **feature/some-feature**: A dedicated branch for developing specific features before merging them into `develop`.
 
+### Branch Usage
+While the project primarily used the `master` branch for stable releases, active development occurred across multiple branches, such as `develop` and `feature/some-feature`. New features were implemented in these branches and occasionally merged into `master`. 
 
-Commits were written following the [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) approach. A commit is therefore written in the following format:
+Some features and bug fixes were developed directly on `develop` before final integration into `master`, though a more structured branching strategy will be enforced in future iterations to ensure better testing and stability.
 
-```bash
-<type>[optional scope]: <description>
-```
+ Some examples include:
+- `develop`: Contains the latest changes, such as CI/CD workflow configurations.
+- `feature/some-feature`: Used for implementing feature-specific changes that are then integrated into `develop`.
 
-The types of commits that have been adopted in our case are as follows:
+### Commit Messages
+While I initially intended to follow the Conventional Commit format, some descriptive commit messages were used instead. Examples include:
+- "Update index.md in section 7"
+- "Resolved merge conflicts"
+- "Add detailed Design section"
+- "Remove file"
 
-- build: for changes related to the build system or external dependencies;
-- chore: for changes that do not affect the production code;
-- ci: for changes related to continuous integration;
-- docs: for changes that only affect the documentation;
-- feat: for the addition of a new feature;
-- fix: when a bug is fixed;
-- perf: for changes made to the code to improve performance;
-- refactor: for changes to the code that do not relate to either bug fixes or the addition of a new feature (e.g., moving a method from one class to another);
-- style: for changes that do not affect the meaning of the code (e.g., removing white spaces, formatting, etc.);
-- test: for the addition of new tests or correction of existing tests.
+Future development will strictly adhere to Conventional Commit guidelines for clearer commit history tracking.
 
 ## Implementation details
 
-- One important aspect of the project that I'm particularly proud of is the TutorRecommendation class, which efficiently filters tutors based on user preferences like age, mode of tutoring (remote or in-person), and location. This class helped improve the response time of the recommendation engine significantly.
+The `TutorRecommendation` class and `GraphPlotter` module were not included in the final artifact as distinct components. Instead, their functionality was directly integrated into the backend code.
 
-- Another feature worth mentioning is the GraphPlotter module, which handles user input for mathematical equations and dynamically generates the corresponding graph. It provides users with an intuitive interface for visualizing equations, and it’s designed to support different types of graphs with minimal input.
+- **TutorRecommendation Functionality**: Initially planned as a separate class, its logic was embedded within the filtering process for matching tutors based on user preferences.
+- **GraphPlotter Functionality**: The graph plotting logic, though not in a separate module, is integrated within the backend and generates graphs dynamically from user input.
+
+In future iterations, I plan to refactor these features into standalone components to enhance modularity and maintainability.
